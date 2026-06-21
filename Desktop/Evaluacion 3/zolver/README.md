@@ -1,16 +1,32 @@
-# React + Vite
+# Zolver - Marketplace de Servicios
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Cliente y problemática
+**Cliente:** Trabajadores independientes (gasfíteres, contratistas, especialistas en remodelación) y usuarios particulares que requieren servicios de mantenimiento para el hogar.
+**Contexto y Problemática detectada:** El mercado de oficios funciona principalmente por el "boca a boca". Existe una dificultad constante para conectar de forma segura y rápida a los especialistas con los clientes que los necesitan urgentemente.
 
-Currently, two official plugins are available:
+## Descripción de la solución
+Desarrollo de una Single Page Application (SPA) que actúa como un marketplace digital. La plataforma centraliza la oferta y demanda de servicios de oficios, permitiendo a los usuarios buscar especialistas por categoría y conectar con ellos de forma ágil.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades propuestas
+* Búsqueda dinámica de especialistas mediante una barra de búsqueda.
+* Visualización de tarjetas de perfil de los trabajadores (`WorkerCard`).
+* (A futuro) Creación, modificación y eliminación de perfiles de especialistas (CRUD).
+* (A futuro) Integración con API externa para validación de direcciones y cálculo de tarifas dinámicas.
 
-## React Compiler
+## Estructura del proyecto
+El proyecto está construido con React y Vite, manteniendo una separación de responsabilidades:
+* `src/components/`: Contiene los componentes modulares de la interfaz (`SearchBar.jsx`, `Header.jsx`, `WorkerCard.jsx`).
+* `src/App.jsx`: Componente principal que orquesta la vista y agrupa los subcomponentes.
+* `src/App.css`: Estilos visuales de la aplicación.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Uso de Inteligencia Artificial (Prompts)
+Durante el desarrollo, se utilizó Gemini como apoyo estructurado. Evidencia de prompts:
+* **Prompt 1:** "necesito que leas y me expliques todo lo que pide esta evaluación y que una vez que la hayas analizado me expliques paso a paso todo lo que tengo que hacer. Considera que trabajo con Visual Studio Code..."
+  * **Decisión:** Se definió la estructura base con Vite y se estableció el flujo de trabajo con ramas en Git.
+* **Prompt 2:** "primero asignemos las carpetas que ocuparemos"
+  * **Decisión:** Se creó la carpeta `components` para aislar lógicamente los archivos de la interfaz.
+* **Prompt 3:** "tengo este codigo en app.jsx debo modificarlo todo por el nuevo que me estas dando ?" (ante error de pantalla en blanco).
+  * **Decisión:** Se aplicó la recomendación de la IA para corregir el guardado de archivos pendientes (punto blanco en VS Code) y forzar la recarga del navegador, logrando visualizar el componente `useState` correctamente.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Explicación general del avance realizado
+En esta evaluación se construyó la base técnica de la SPA utilizando React y Vite. Se implementó la estructura de carpetas, se limpiaron los archivos por defecto y se creó un componente funcional (`SearchBar`) que utiliza el hook `useState` para el manejo de estado en tiempo real. Además, se configuró el control de versiones con Git, respetando el uso de ramas y commits descriptivos, dejando el entorno preparado para la futura integración de persistencia de datos.
