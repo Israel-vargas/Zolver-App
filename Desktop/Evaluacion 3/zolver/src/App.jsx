@@ -5,29 +5,43 @@ import WorkerCard from './components/WorkerCard'
 
 function App() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto' }}>
+    <div style={{ fontFamily: 'system-ui, sans-serif', backgroundColor: '#0b1120', color: '#e2e8f0', minHeight: '100vh', paddingBottom: '60px' }}>
       
-      {/* Componente de Encabezado */}
+      {/* Encabezado expandido */}
       <Header />
       
-      {/* Componente de Búsqueda con Estado */}
-      <SearchBar />
-      
-      {/* Lista de Trabajadores de Ejemplo */}
-      <div style={{ marginTop: '30px' }}>
-        <h2 style={{ textAlign: 'left', borderBottom: '2px solid #eee', paddingBottom: '10px' }}>Especialistas Destacados</h2>
+      {/* Contenedor central más ancho */}
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+        <SearchBar />
         
-        <WorkerCard 
-          nombre="Juan Pérez" 
-          especialidad="Gasfíter Certificado" 
-          tarifa="$25.000 / visita" 
-        />
-        <WorkerCard 
-          nombre="María González" 
-          especialidad="Electricista Autorizada SEC" 
-          tarifa="$30.000 / visita" 
-        />
-      </div>
+        <div style={{ marginTop: '50px' }}>
+          <h2 style={{ fontSize: '1.8rem', borderBottom: '1px solid #1e293b', paddingBottom: '15px', margin: '0 0 30px 0', color: '#f8fafc' }}>
+            Especialistas Destacados
+          </h2>
+          
+          {/* Sistema de Cuadrícula (Grid) para modo escritorio */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '25px' }}>
+            <WorkerCard 
+              nombre="Juan Pérez" 
+              especialidad="Gasfíter Certificado" 
+              tarifa="$25.000 / visita" 
+              rating="⭐ 4.8"
+            />
+            <WorkerCard 
+              nombre="María González" 
+              especialidad="Electricista Autorizada SEC" 
+              tarifa="$30.000 / visita" 
+              rating="⭐ 4.9"
+            />
+            <WorkerCard 
+              nombre="Carlos Soto" 
+              especialidad="Especialista en Remodelación" 
+              tarifa="$40.000 / visita" 
+              rating="⭐ 5.0"
+            />
+          </div>
+        </div>
+      </main>
 
     </div>
   )
