@@ -13,6 +13,12 @@ Desarrollo de una Single Page Application (SPA) que actúa como un marketplace d
 * (A futuro) Creación, modificación y eliminación de perfiles de especialistas (CRUD).
 * (A futuro) Integración con API externa para validación de direcciones y cálculo de tarifas dinámicas.
 
+## Planificación de Integración Externa
+Para la evolución de esta plataforma, se contempla la integración con una fuente de datos externa (como la API de Google Maps o similar).
+* **¿Qué información se obtendrá?** Datos de geolocalización, cálculo de distancias y validación de direcciones postales.
+* **¿Por qué se requiere?** Zolver necesita mostrarle al usuario únicamente los especialistas que tienen cobertura en su comuna o sector específico.
+* **¿Cómo aportará valor?** Reducirá drásticamente los tiempos de traslado de los trabajadores y le garantizará al cliente una atención mucho más rápida, optimizando la logística del servicio.
+
 ## Estructura del proyecto
 El proyecto está construido con React y Vite, manteniendo una separación de responsabilidades:
 * `src/components/`: Contiene los componentes modulares de la interfaz (`SearchBar.jsx`, `Header.jsx`, `WorkerCard.jsx`).
