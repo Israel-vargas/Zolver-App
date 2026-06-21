@@ -40,5 +40,13 @@ Durante el desarrollo, se utilizó un asistente de Inteligencia Artificial integ
   * **Sugerencia de la IA:** El asistente indicó que este comportamiento suele ocurrir por archivos con cambios sin guardar (estado modificado en el editor) o por la necesidad de forzar la recarga del servidor de Vite local.
   * **Decisión:** Se procedió a utilizar la función "Guardar todo" del IDE y abrir la aplicación en un navegador externo, resolviendo el problema de renderizado.
 
+* **Prompt 4 (Refinamiento UI/UX y Estilos Globales):** "El diseño inicial se ve plano y centrado. ¿Cómo modifico los estilos en Vite para que ocupe el 100% de la pantalla, tenga un diseño oscuro profesional y los botones sean interactivos?"
+  * **Sugerencia de la IA:** El asistente proporcionó un reseteo CSS para `index.css` (`margin: 0`, `width: 100vw`), recomendó usar CSS Grid para las tarjetas e indicó cómo usar eventos como `onMouseEnter` y `onClick` en línea para interactividad.
+  * **Decisión y Ajustes:** Se aplicó el rediseño completo a la interfaz, logrando una vista de escritorio envolvente y agregando alertas interactivas a los botones de "Ver Perfil" e "Iniciar Sesión" para simular la navegación futura.
+
+* **Prompt 5 (Resolución de errores de sintaxis):** "Recibí un error [PARSE_ERROR] Unexpected token en Header.jsx tras actualizar el botón de login. ¿Qué pudo fallar?"
+  * **Sugerencia de la IA:** Identificó que al copiar y pegar fragmentos de código, se omitieron inadvertidamente las etiquetas de cierre `</nav>`, `</header>` y los paréntesis de la función.
+  * **Decisión:** Se sustituyó el bloque completo del componente para asegurar la integridad de la estructura JSX y resolver el conflicto de compilación de Vite.
+  
 ## Explicación general del avance realizado
 En esta evaluación se construyó la base técnica de la SPA utilizando React y Vite. Se implementó la estructura de carpetas, se limpiaron los archivos por defecto y se creó un componente funcional (`SearchBar`) que utiliza el hook `useState` para el manejo de estado en tiempo real. Además, se configuró el control de versiones con Git, respetando el uso de ramas y commits descriptivos, dejando el entorno preparado para la futura integración de persistencia de datos.
