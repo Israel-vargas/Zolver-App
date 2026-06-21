@@ -19,18 +19,20 @@ function Header() {
         </p>
       </div>
       <nav>
-        <button style={{ 
-          backgroundColor: 'transparent', 
-          color: '#e2e8f0', 
-          border: '1px solid #3b82f6', 
-          padding: '10px 20px', 
-          borderRadius: '8px', 
-          cursor: 'pointer',
-          fontWeight: '600',
-          transition: 'all 0.2s'
-        }}
-        onMouseEnter={(e) => { e.target.style.backgroundColor = '#3b82f6'; e.target.style.color = '#fff'; }}
-        onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#e2e8f0'; }}
+        <button 
+          onClick={() => alert('¡El sistema de autenticación de Zolver estará disponible en la próxima versión!\n\n(Funcionalidad en desarrollo para la Evaluación 4)')}
+          style={{ 
+            backgroundColor: 'transparent', 
+            color: '#e2e8f0', 
+            border: '1px solid #3b82f6', 
+            padding: '10px 20px', 
+            borderRadius: '8px', 
+            cursor: 'pointer',
+            fontWeight: '600',
+            transition: 'all 0.2s'
+          }}
+          onMouseEnter={(e) => { e.target.style.backgroundColor = '#3b82f6'; e.target.style.color = '#fff'; }}
+          onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#e2e8f0'; }}
         >
           Iniciar Sesión
         </button>
