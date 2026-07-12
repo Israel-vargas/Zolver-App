@@ -47,6 +47,23 @@ Durante el desarrollo, se utilizó un asistente de Inteligencia Artificial integ
 * **Prompt 5 (Resolución de errores de sintaxis):** "Recibí un error [PARSE_ERROR] Unexpected token en Header.jsx tras actualizar el botón de login. ¿Qué pudo fallar?"
   * **Sugerencia de la IA:** Identificó que al copiar y pegar fragmentos de código, se omitieron inadvertidamente las etiquetas de cierre `</nav>`, `</header>` y los paréntesis de la función.
   * **Decisión:** Se sustituyó el bloque completo del componente para asegurar la integridad de la estructura JSX y resolver el conflicto de compilación de Vite.
-  
+
 ## Explicación general del avance realizado
 En esta evaluación se construyó la base técnica de la SPA utilizando React y Vite. Se implementó la estructura de carpetas, se limpiaron los archivos por defecto y se creó un componente funcional (`SearchBar`) que utiliza el hook `useState` para el manejo de estado en tiempo real. Además, se configuró el control de versiones con Git, respetando el uso de ramas y commits descriptivos, dejando el entorno preparado para la futura integración de persistencia de datos.
+
+## Explicación general del avance realizado en tu README.md:
+
+"Actualmente, la barra de búsqueda implementa el hook useState para capturar el valor de entrada, el cual se refleja dinámicamente en la interfaz como indicador de estado. La lógica de filtrado de las tarjetas de especialistas ha sido planificada para la siguiente etapa del proyecto, donde se integrará con una fuente de datos (JSON/API) y se realizarán operaciones de filtrado (filter) sobre el estado global de la lista de trabajadores."
+
+
+* **Prompt Evaluación 4 - Fase 1 (Persistencia Local):** "Necesito implementar LocalStorage en App.jsx para que la lista de especialistas no se borre al recargar la página. ¿Cómo inicializo el estado con los datos guardados?"
+  * **Sugerencia IA:** Utilizar una función flecha dentro de `useState` para leer `localStorage.getItem` en la carga inicial, y un `useEffect` para guardar los cambios cada vez que el estado se actualice.
+  * **Decisión:** Se implementó esta estructura en `App.jsx` para garantizar la persistencia de datos.
+
+* **Prompt Evaluación 4 - Fase 2 (Operaciones CRUD y Validaciones):** "Crea un componente WorkerForm.jsx que permita agregar y editar trabajadores. Debe incluir validaciones básicas para que no se envíen campos vacíos y botones para Editar/Eliminar en WorkerCard.jsx."
+  * **Sugerencia IA:** Crear el formulario con `useState` para cada campo, aplicar validaciones con un `if (!nombre.trim()) return`, y pasar las funciones de CRUD desde `App.jsx` mediante props a las tarjetas y al formulario.
+  * **Decisión:** Se integró el componente `WorkerForm` y se añadieron los botones de acción en `WorkerCard`, logrando el CRUD completo y manejando los datos actualizados hacia el componente padre.
+
+* **Prompt Evaluación 4 - Fase 3 (Integración Externa y Errores):** "¿Cómo consumo datos de una API externa en React para cargar especialistas de prueba si el LocalStorage está vacío, y cómo manejo los errores si la API falla?"
+  * **Sugerencia IA:** Usar `useEffect` con una función asíncrona (`async/await`) haciendo `fetch` a JSONPlaceholder. Para el manejo de errores, envolver la petición en un bloque `try...catch` y mostrar una alerta si falla.
+  * **Decisión:** Se implementó el `fetch` inicial, mapeando los datos de la API al formato de la aplicación, y logrando un manejo de errores robusto.
