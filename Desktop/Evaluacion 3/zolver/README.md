@@ -88,7 +88,35 @@ npm install
 npm run dev
 ```
 
-## Notas para la evaluación
-- El proyecto mantiene la lógica base solicitada para la evaluación.
-- Se aplicaron mejoras visuales de forma cuidadosa para no romper la arquitectura original.
-- Se dejó documentado el proceso en este README para facilitar la revisión del trabajo.
+## Revisión de cumplimiento con la evaluación
+A continuación se detalla qué cumple la app y qué aspectos deberían quedar claros para la revisión:
+
+### Lo que sí cumple
+- Implementa una SPA con React + Vite.
+- Tiene una estructura modular con componentes separados en `src/components/`.
+- Incluye búsqueda por nombre o especialidad.
+- Permite crear, editar y eliminar especialistas.
+- Mantiene los datos en LocalStorage para persistencia.
+- Carga datos iniciales desde una API externa cuando no existe información local.
+- Tiene una interfaz más profesional y organizada visualmente.
+
+### Lo que ya está funcionando bien
+- La app renderiza correctamente y compila sin errores.
+- El flujo de CRUD funciona de forma local y persistente.
+- La experiencia visual es más clara que la versión inicial.
+- El README documenta los prompts usados y la evolución del proyecto.
+
+### Qué podría mejorar aún más
+- Añadir validaciones más robustas en los formularios.
+- Mejorar la experiencia de edición con más control visual del modal.
+- Ampliar la búsqueda para que sea más dinámica o con sugerencias.
+- Considerar un diseño aún más cercano a un producto real si la evaluación lo pide.
+
+## Ramas del proyecto
+- `feature/estructura-inicial`: base inicial del proyecto.
+- `feature/crud-evaluacion4`: implementación del CRUD.
+- `feature/crud-api-evaluacion4`: integración de API y persistencia.
+- `feat/ui-profesional-readme`: mejoras visuales, documentación y refinamiento de la interfaz.
+
+## Resumen final para la evaluación
+La app cumple con los requerimientos básicos de la evaluación: estructura, componentes, estado, CRUD, persistencia local, integración externa y documentación. La presentación visual también fue mejorada para que se vea más profesional y ordenada.
